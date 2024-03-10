@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRIYANKA</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="container">
+        <img src="images/priyanka-removebg-preview.png" class="logo">
+
+        <div class="content">
+            <p><i>WEBSITE FOR YOU</i></p>
+            <h1><b>A <span><i>SPECIAL</i></span> DAY </b></h1>
+            <div class="launch-time">
+                <div>
+                    <p id="days">00</p>
+                    <span><b>Days</b></span>
+                </div>
+                <div>
+                    <p id="hours">00</p>
+                    <span><b>Hours</b></span>
+                </div><div>
+                    <p id="minutes">00</p>
+                    <span><b>Minutes</b></span>
+                </div><div>
+                    <p id="seconds">00</p>
+                    <span><b>Seconds</b></span>
+                </div>
+            </div>
+            <button type="button">learn more</button>
+        </div>
+        <img src="images/ballon-removebg-preview.png" class="ballon">
+    </div>
+
+    <script>
+        var countDownDate = new Date("May 28, 2024 00:0:00").getTime();
+        var x = setInterval(function(){
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerHTML = days;
+            document.getElementById("hours").innerHTML = hours;
+            document.getElementById("minutes").innerHTML = minutes;
+            document.getElementById("seconds").innerHTML = seconds;
+
+            if(distance < 0){
+                clearInterval(x);
+                document.getElementById("days").innerHTML = "00";
+                document.getElementById("hours").innerHTML = "00";
+                document.getElementById("minutes").innerHTML = "00";
+                document.getElementById("seconds").innerHTML = "00";
+            }
+        },1000);
+
+
+    </script>
+</body>
+</html>  
